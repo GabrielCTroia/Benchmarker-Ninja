@@ -16,6 +16,8 @@
     "gulp-load-plugins": "^0.10.0",
     "gulp-rename": "^1.2.0",
     "gulp-replace": "^0.5.3",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-typescript": "^2.8.0",
     "jquery": "1.11.3",
     "jshint-stylish": "^1.0.1",
     "mocha": "^2.2.4",
@@ -25,7 +27,7 @@
   "engines": {
     "node": ">=0.10.0"
   },
-  "h5bp-configs": {
+  "configs": {
     "directories": {
       "archive": "archive",
       "dist": "dist",
