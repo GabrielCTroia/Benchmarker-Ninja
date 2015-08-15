@@ -155,16 +155,16 @@ gulp.task('typescript', function (done) {
   var tsResult = gulp.src(dirs.src + '/scripts/**/*.ts')
       .pipe(plugins.sourcemaps.init())
       .pipe(plugins.typescript({
-        declarationFiles : true,
-        noExternalResolve: true,
-        sortOutput       : true,
+        //declarationFiles : true,
+        //noExternalResolve: true,
+        //sortOutput       : true,
         //sourceRoot       : dirs.src + '../scripts'
       }));
 
 
   if (tsResult.js) {
     return tsResult.js
-      //.pipe(concat('main.js'))
+        .pipe(concat('main.js'))
         .pipe(plugins.sourcemaps.write())
         .pipe(gulp.dest(dirs.dist + '/js'));
   } else {
