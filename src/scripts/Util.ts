@@ -19,10 +19,10 @@ namespace BenchmarkerNinja.Util {
   }
 
   export function hexToRgbaString(hex, opacity) {
-    return `rgba(
-        ${Lazy(hexToRgba(hex, opacity))
-        .reduce((result, n) => result + n + ',', '')
-        .slice(0, -1)
+    return `rgba(${
+        Lazy(hexToRgba(hex, opacity))
+            .reduce((result, n) => result + n + ',', '')
+            .slice(0, -1)
         })`;
   }
 
