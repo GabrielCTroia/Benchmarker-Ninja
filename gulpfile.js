@@ -4,6 +4,8 @@ var path = require('path');
 var gulp = require('gulp');
 var connect = require('gulp-connect');
 
+var concat = require('gulp-concat');
+
 // Load all gulp plugins automatically
 // and attach them to the `plugins` object
 var plugins = require('gulp-load-plugins')();
@@ -162,13 +164,20 @@ gulp.task('typescript', function (done) {
 
   if (tsResult.js) {
     return tsResult.js
-        //.pipe(concat('main.js'))
+      //.pipe(concat('main.js'))
         .pipe(plugins.sourcemaps.write())
         .pipe(gulp.dest(dirs.dist + '/js'));
   } else {
     done();
   }
+});
 
+gulp.task('vendor', function () {
+  return gulp.src([
+    'node_modules/immutable/dist/immutable.js'
+  ])
+      .pipe(concat('vendor.js'))
+      .pipe(gulp.dest(dirs.dist + '/js/'));
 });
 
 gulp.task('watch', function () {
@@ -199,6 +208,7 @@ gulp.task('archive', function (done) {
 gulp.task('build', function (done) {
   runSequence(
       ['clean'],
+      'vendor',
       'typescript',
       'copy',
       done);
