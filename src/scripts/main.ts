@@ -1,19 +1,13 @@
 /// <reference path="./vendor.d.ts" />
 'use strict';
 
-module BenchmarkerNinja {
+namespace BenchmarkerNinja {
 
-  export function isWorking() {
-    //var map: Immutable.Map<string, number>;
-    //map = Immutable.Map({a: 1, b: 2});
-
-    var a: _.List<string>;
-
-    console.log('Working still yes?');
-  }
+  Benchmarking.benchmark(
+      'Mod',
+      (scope) => scope.num % 10,
+      (scope) => {
+        scope.num = 612873612937129873129873;
+      });
 
 }
-
-BenchmarkerNinja.isWorking();
-
-BenchmarkerNinja.test();

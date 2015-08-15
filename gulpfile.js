@@ -174,7 +174,7 @@ gulp.task('typescript', function (done) {
 
 gulp.task('vendor', function () {
   return gulp.src([
-    'node_modules/immutable/dist/immutable.js'
+    'node_modules/lazy.js/lazy.js'
   ])
       .pipe(concat('vendor.js'))
       .pipe(gulp.dest(dirs.dist + '/js/'));

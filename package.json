@@ -47,6 +47,7 @@
     "test": "gulp archive && mocha --reporter spec --timeout 5000"
   },
   "dependencies": {
-    "immutable": "^3.7.4"
+    "immutable": "^3.7.4",
+    "lazy.js": "^0.4.0"
   }
 }

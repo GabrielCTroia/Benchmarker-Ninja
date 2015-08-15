@@ -1,2 +1,2 @@
-/// <reference path="../../typings/lodash/lodash.d.ts" />
+/// <reference path="../../typings/tsd.d.ts" />
 /// <reference path="../../node_modules/immutable/dist/immutable.d.ts" />
